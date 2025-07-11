@@ -72,6 +72,17 @@ public class PlayerMover : MonoBehaviour
             rb.AddForce(Vector3.down * fallSpeed);
         }
 
+        
+        
+        if (newVelocity.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (newVelocity.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }
+        
 
     }
 }
