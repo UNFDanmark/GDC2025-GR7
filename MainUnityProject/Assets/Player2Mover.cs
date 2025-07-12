@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMover : MonoBehaviour
+public class Player2Mover : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -39,12 +39,25 @@ public class PlayerMover : MonoBehaviour
     {
         print(grounded);
         
+        Vector3 newVelocity = rb.linearVelocity;
+        /*
         float moveInput = moveAction.ReadValue<float>();
 
-        Vector3 newVelocity = rb.linearVelocity;
+        
 
         newVelocity.x = moveInput * speed;
         rb.linearVelocity = newVelocity;
+        */
+        float moveInput = moveAction.ReadValue<float>();
+        
+        if (moveInput > 0)
+        {
+            rb.AddForce(Vector3.right * speed, ForceMode.Force);
+        }
+        else if (moveInput < 0)
+        {
+            rb.AddForce(Vector3.left * speed, ForceMode.Force);
+        }
 
         
         
@@ -74,11 +87,11 @@ public class PlayerMover : MonoBehaviour
 
         
         
-        if (newVelocity.x < 0)
+        if (moveInput > 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (newVelocity.x > 0)
+        else if (moveInput < 0)
         {
             transform.rotation = Quaternion.Euler(0,0,0);
         }
