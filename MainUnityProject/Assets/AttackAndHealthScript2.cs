@@ -17,6 +17,10 @@ public class AttackAndHealthScript2 : MonoBehaviour
     public Rigidbody rb2;
 
     public CanAttackScript2 AttackScript2;
+    
+    public float Cooldown = 2f;
+
+    public float cooldownLeft = 0f;
 
     // Update is called once per frame
     void Start()
@@ -26,26 +30,24 @@ public class AttackAndHealthScript2 : MonoBehaviour
     void Update()
     {
         
-        //print(transform.eulerAngles.y);
+        cooldownLeft -= Time.deltaTime;
         
-        if (AttackScript2.canAttack && attackAction.WasPressedThisFrame())
+        if (AttackScript2.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
             playerOneHealth -= 1;
-            print("trying to attack");
             if (transform.eulerAngles.y > 90)
             {
-                print("right attack");
                 rb2.AddForce(Vector3.right * hitForce, ForceMode.Impulse);
             }
             else if (transform.eulerAngles.y < 90)
             {
-                print("left attack");
                 rb2.AddForce(Vector3.left * hitForce, ForceMode.Impulse);
             }
             
             //if player1 is facing right, rb.AddForce(Vector3.right * hitForce)
             
             //if player1 is facing left, rb.AddForce(Vector3.left * hitForce)
+            cooldownLeft = Cooldown;
         }
         print(playerOneHealth);
     }

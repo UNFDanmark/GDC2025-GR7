@@ -48,6 +48,7 @@ public class Player2Mover : MonoBehaviour
         newVelocity.x = moveInput * speed;
         rb.linearVelocity = newVelocity;
         */
+        
         float moveInput = moveAction.ReadValue<float>();
         
         if (moveInput > 0)
@@ -58,14 +59,14 @@ public class Player2Mover : MonoBehaviour
         {
             rb.AddForce(Vector3.left * speed, ForceMode.Force);
         }
-
+        
         
         
         float jumpInput = jumpAction.ReadValue<float>();
-
+        
         print(jumpInput);
         
-        if (grounded == true && jumpAction.WasPressedThisFrame())
+        if (grounded == true && jumpAction.WasPressedThisFrame() && jumpInput > 0)
         {
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
@@ -73,6 +74,7 @@ public class Player2Mover : MonoBehaviour
         }
         else if (grounded == false && jumpInput < 0)
         {
+            print("fast fall");
             rb.AddForce(Vector3.down * fastFall);
             
             

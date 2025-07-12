@@ -65,7 +65,7 @@ public class Player1Mover : MonoBehaviour
 
         print(jumpInput);
         
-        if (grounded == true && jumpAction.WasPressedThisFrame())
+        if (grounded == true && jumpAction.WasPressedThisFrame() && jumpInput > 0)
         {
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
@@ -73,6 +73,7 @@ public class Player1Mover : MonoBehaviour
         }
         else if (grounded == false && jumpInput < 0)
         {
+            print("fast fall");
             rb.AddForce(Vector3.down * fastFall);
             
             
