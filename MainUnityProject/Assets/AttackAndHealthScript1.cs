@@ -24,6 +24,18 @@ public class AttackAndHealthScript1 : MonoBehaviour
 
     public GameObject Player2;
 
+    public GameObject Player2PreFab;
+
+    public int respawnHealth = 5;
+
+    public MiddleScript MiddleScript;
+    
+    public GameObject PlayerModel2;
+
+    public GameObject Player2Respawn;
+
+    public int respawnsLeft = 2;
+
     // Update is called once per frame
     void Start()
     {
@@ -53,9 +65,19 @@ public class AttackAndHealthScript1 : MonoBehaviour
         }
         print(playerTwoHealth);
         
-        if(playerTwoHealth == 0)
+        if(playerTwoHealth == 0 && respawnsLeft > 0)
         {
-            GameObject.Destroy(Player2);
+            respawnsLeft -= 1;
+            print("Hello");
+            PlayerModel2.SetActive(false);
+            playerTwoHealth = respawnHealth;
+            Player2.transform.position = Player2Respawn.transform.position;
+            rb2.MovePosition(Player2Respawn.transform.position);
+            PlayerModel2.SetActive(true);
+        }
+        else if (playerTwoHealth == 0 && respawnsLeft <= 0)
+        {
+            PlayerModel2.SetActive(false);
         }
         
     }
