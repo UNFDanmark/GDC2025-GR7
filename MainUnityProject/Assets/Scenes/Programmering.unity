@@ -1045,6 +1045,7 @@ MonoBehaviour:
   AttackScript: {fileID: 933796550}
   Cooldown: 2
   cooldownLeft: 0
+  Player2: {fileID: 1138075125}
 --- !u!1 &1007745987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,9 +1315,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1138075133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,6 +1354,7 @@ MonoBehaviour:
   AttackScript2: {fileID: 2125998250}
   Cooldown: 2
   cooldownLeft: 0
+  Player1: {fileID: 969885884}
 --- !u!114 &1138075134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,7 +1575,7 @@ Transform:
   m_GameObject: {fileID: 2055790285}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.9703002, y: 0, z: 0.86387014}
+  m_LocalPosition: {x: -1.9703002, y: -0, z: 0.89}
   m_LocalScale: {x: 11.509, y: 11.508999, z: 11.508999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1608,7 +1610,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055790285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

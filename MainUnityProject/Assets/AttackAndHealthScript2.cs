@@ -22,6 +22,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
 
     public float cooldownLeft = 0f;
 
+    public GameObject Player1;
+
     // Update is called once per frame
     void Start()
     {
@@ -50,5 +52,10 @@ public class AttackAndHealthScript2 : MonoBehaviour
             cooldownLeft = Cooldown;
         }
         print(playerOneHealth);
+
+        if (playerOneHealth == 0)
+        {
+            GameObject.Destroy(Player1);
+        }
     }
 }
