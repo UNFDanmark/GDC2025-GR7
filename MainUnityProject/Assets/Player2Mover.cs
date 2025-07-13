@@ -53,11 +53,11 @@ public class Player2Mover : MonoBehaviour
         
         if (moveInput > 0)
         {
-            rb.AddForce(Vector3.right * speed, ForceMode.Force);
+            rb.AddForce(Vector3.right * (speed * Time.deltaTime), ForceMode.Force);
         }
         else if (moveInput < 0)
         {
-            rb.AddForce(Vector3.left * speed, ForceMode.Force);
+            rb.AddForce(Vector3.left * (speed * Time.deltaTime), ForceMode.Force);
         }
         
         
