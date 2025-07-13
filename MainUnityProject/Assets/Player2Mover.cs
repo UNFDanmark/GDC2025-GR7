@@ -15,6 +15,7 @@ public class Player2Mover : MonoBehaviour
     public float jumpForce = 10f;
     public float fastFall = 5f;
     public float fallSpeed = 10f;
+    public float maxSpeed = 1;
     void Start()
     {
         moveAction.Enable();
@@ -58,6 +59,13 @@ public class Player2Mover : MonoBehaviour
         else if (moveInput < 0)
         {
             rb.AddForce(Vector3.left * (speed * Time.deltaTime), ForceMode.Force);
+        }
+        
+        if (rb.linearVelocity.magnitude > maxSpeed)
+        {
+            Vector2 velocityDirection = rb.linearVelocity / rb.linearVelocity.magnitude;
+            Vector2 clampedVelocity = velocityDirection * maxSpeed;
+            rb.linearVelocity = clampedVelocity;
         }
         
         

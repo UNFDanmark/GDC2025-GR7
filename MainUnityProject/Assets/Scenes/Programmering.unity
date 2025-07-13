@@ -145,7 +145,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313626124}
-  m_Material: {fileID: 13400000, guid: 4d6a539b56695144aab01321235a4a66, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -784,8 +784,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969885884}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0.4
+  m_Mass: 0.01
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -908,7 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920a79111f6da4e4596c200576cfb5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 20
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -983,10 +983,11 @@ MonoBehaviour:
       m_Action: Jump
       m_Flags: 0
     m_Flags: 0
-  gravity: 111.9
-  jumpForce: 300
-  fastFall: 12
-  fallSpeed: 8
+  gravity: 1
+  jumpForce: 5
+  fastFall: 3
+  fallSpeed: 0.75
+  maxSpeed: 10
 --- !u!65 &969885891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1038,7 +1039,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   playerTwoHealth: 5
-  hitForce: 10
+  hitForce: 0.5
   rb: {fileID: 969885885}
   rb2: {fileID: 1138075132}
   AttackScript: {fileID: 933796550}
@@ -1297,8 +1298,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138075125}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0.4
+  m_Mass: 0.01
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1346,7 +1347,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   playerOneHealth: 5
-  hitForce: 10
+  hitForce: 0.5
   rb: {fileID: 1138075132}
   rb2: {fileID: 969885885}
   AttackScript2: {fileID: 2125998250}
@@ -1364,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1dbbfa37110028499457c996644ff6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 20
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -1431,10 +1432,11 @@ MonoBehaviour:
       m_Action: Jump
       m_Flags: 8
     m_Flags: 0
-  gravity: 111.9
-  jumpForce: 300
-  fastFall: 12
-  fallSpeed: 8
+  gravity: 1
+  jumpForce: 5
+  fastFall: 3
+  fallSpeed: 0.75
+  maxSpeed: 10
 --- !u!1 &1751389221
 GameObject:
   m_ObjectHideFlags: 0
