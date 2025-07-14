@@ -49,6 +49,14 @@ public class AttackAndHealthScript1 : MonoBehaviour
     float timeToDisableCameraShake;
 
     public CameraShakeScript CameraShakeScript;
+    
+    public GameObject Player1VictoryScreen;
+
+    public float fadeToWinScreenTime = 3f;
+
+    float fadeToWinScreenTimeLeft;
+
+    bool hasAlreadySetFadeTime = false;
     // Update is called once per frame
     void Start()
     {
@@ -57,6 +65,8 @@ public class AttackAndHealthScript1 : MonoBehaviour
     void Update()
     {
         cooldownLeft -= Time.deltaTime;
+        
+        fadeToWinScreenTimeLeft -= Time.deltaTime;
         
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
@@ -95,6 +105,17 @@ public class AttackAndHealthScript1 : MonoBehaviour
         else if (playerTwoHealth == 0 && respawnsLeft <= 0)
         {
             PlayerModel2.SetActive(false);
+            
+            if(!hasAlreadySetFadeTime)
+            {
+                fadeToWinScreenTimeLeft = fadeToWinScreenTime;
+                hasAlreadySetFadeTime = true;
+            }
+            if (fadeToWinScreenTimeLeft <= 0)
+            {
+                print("timer");
+                Player1VictoryScreen.SetActive(true);
+            }
         }
         
     }
