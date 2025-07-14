@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 441074024}
   - component: {fileID: 441074023}
   - component: {fileID: 441074026}
+  - component: {fileID: 441074027}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -708,6 +709,20 @@ MonoBehaviour:
   AmplitudeGain: 3
   FrequencyGain: 1
   m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &441074027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441074022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f132b4df2c02283488263dd967b693ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraNoise: {fileID: 441074026}
+  AmplitudeChange: 3
 --- !u!1 &614782971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1446,10 @@ PrefabInstance:
       propertyPath: AmplitudeChange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: CameraShakeScript
+      value: 
+      objectReference: {fileID: 441074027}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1462,6 +1481,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 969885884}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: CameraNoise
+      value: 
+      objectReference: {fileID: 441074026}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: PlayerModel
       value: 
       objectReference: {fileID: 4374918889283848546}
@@ -1478,13 +1501,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1396807539}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: shakeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: Player1Respawn
       value: 
       objectReference: {fileID: 1597965789}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: AmplitudeChange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: markerPosition2
       value: 
       objectReference: {fileID: 1748415516}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: CameraShakeScript
+      value: 
+      objectReference: {fileID: 441074027}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: attackAction.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/rightCtrl

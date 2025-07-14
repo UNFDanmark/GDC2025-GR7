@@ -46,9 +46,9 @@ public class AttackAndHealthScript1 : MonoBehaviour
     
     public float shakeDuration = 1f;
 
-    public float AmplitudeChange = 1;
-
     float timeToDisableCameraShake;
+
+    public CameraShakeScript CameraShakeScript;
     // Update is called once per frame
     void Start()
     {
@@ -56,22 +56,11 @@ public class AttackAndHealthScript1 : MonoBehaviour
     }
     void Update()
     {
-        if (timeToDisableCameraShake > 0)
-        {
-            timeToDisableCameraShake -= Time.deltaTime;
-        }
-        else
-        {
-            CameraNoise.AmplitudeGain = 0;
-        }
-        
         cooldownLeft -= Time.deltaTime;
         
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
-            timeToDisableCameraShake = shakeDuration;
-            
-            CameraNoise.AmplitudeGain = AmplitudeChange;
+            CameraShakeScript.DoShake(shakeDuration);
             
             playerTwoHealth -= 1;
             

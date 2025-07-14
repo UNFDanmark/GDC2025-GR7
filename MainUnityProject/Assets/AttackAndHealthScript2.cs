@@ -1,4 +1,5 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,6 +40,16 @@ public class AttackAndHealthScript2 : MonoBehaviour
     public GameObject markerPreFab;
 
     public GameObject markerPosition2;
+    
+    public CinemachineBasicMultiChannelPerlin CameraNoise;
+    
+    public float shakeDuration = 1f;
+
+    public float AmplitudeChange = 1;
+    
+    float timeToDisableCameraShake;
+    
+    public CameraShakeScript CameraShakeScript;
 
     // Update is called once per frame
     void Start()
@@ -48,11 +59,15 @@ public class AttackAndHealthScript2 : MonoBehaviour
     void Update()
     {
         
+        
         cooldownLeft -= Time.deltaTime;
         
         if (AttackScript2.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
+            CameraShakeScript.DoShake(shakeDuration);
+            
             playerOneHealth -= 1;
+            
             if (transform.eulerAngles.y > 90)
             {
                 rb2.AddForce(Vector3.right * hitForce, ForceMode.Impulse);
