@@ -1,6 +1,8 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LowLevelPhysics;
 
 public class AttackAndHealthScript1 : MonoBehaviour
 {
@@ -39,6 +41,22 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public GameObject markerPreFab;
 
     public GameObject markerPosition;
+
+    public CinemachineBasicMultiChannelPerlin CameraNoise;
+    
+    public float shakeDuration = 1f;
+
+    float timeToDisableCameraShake;
+
+    public CameraShakeScript CameraShakeScript;
+    
+    public GameObject Player1VictoryScreen;
+
+    public float fadeToWinScreenTime = 3f;
+
+    float fadeToWinScreenTimeLeft;
+
+    bool hasAlreadySetFadeTime = false;
     // Update is called once per frame
     void Start()
     {
@@ -46,13 +64,16 @@ public class AttackAndHealthScript1 : MonoBehaviour
     }
     void Update()
     {
-        
         cooldownLeft -= Time.deltaTime;
+        
+        fadeToWinScreenTimeLeft -= Time.deltaTime;
         
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
+            CameraShakeScript.DoShake(shakeDuration);
+            
             playerTwoHealth -= 1;
-
+            
             if (transform.eulerAngles.y == 0)
             {
                 rb2.AddForce(Vector3.right * hitForce, ForceMode.Impulse);
@@ -84,6 +105,17 @@ public class AttackAndHealthScript1 : MonoBehaviour
         else if (playerTwoHealth == 0 && respawnsLeft <= 0)
         {
             PlayerModel2.SetActive(false);
+            
+            if(!hasAlreadySetFadeTime)
+            {
+                fadeToWinScreenTimeLeft = fadeToWinScreenTime;
+                hasAlreadySetFadeTime = true;
+            }
+            if (fadeToWinScreenTimeLeft <= 0)
+            {
+                print("timer");
+                Player1VictoryScreen.SetActive(true);
+            }
         }
         
     }
