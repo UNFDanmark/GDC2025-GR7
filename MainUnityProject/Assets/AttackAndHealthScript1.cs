@@ -3,6 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
+using UnityEngine.Rendering;
 
 public class AttackAndHealthScript1 : MonoBehaviour
 {
@@ -57,6 +58,12 @@ public class AttackAndHealthScript1 : MonoBehaviour
     float fadeToWinScreenTimeLeft;
 
     bool hasAlreadySetFadeTime = false;
+
+    public Volume BlueVignette;
+
+    public bool BlueWin;
+    
+    
     // Update is called once per frame
     void Start()
     {
@@ -64,6 +71,11 @@ public class AttackAndHealthScript1 : MonoBehaviour
     }
     void Update()
     {
+        if (BlueWin == true)
+        {
+            BlueVignette.weight = Mathf.Lerp(BlueVignette.weight, 1, Time.deltaTime);
+        }
+        
         cooldownLeft -= Time.deltaTime;
         
         fadeToWinScreenTimeLeft -= Time.deltaTime;
@@ -110,6 +122,7 @@ public class AttackAndHealthScript1 : MonoBehaviour
             {
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
                 hasAlreadySetFadeTime = true;
+                BlueWin = true;
             }
             if (fadeToWinScreenTimeLeft <= 0)
             {
