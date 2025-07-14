@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1327348176089832606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5812843954690506490}
+  m_Layer: 0
+  m_Name: HitMarkerPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5812843954690506490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327348176089832606}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.218, y: -0.274, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2074080204661025676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3167013991273926224
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,14 +291,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Jump
       m_Flags: 8
-    - m_Name: 
-      m_Id: 8beb9a46-2b35-4ee4-9f36-81872bf6fd34
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
     m_Flags: 0
   gravity: 1
   jumpForce: 7
@@ -294,7 +317,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.25, z: 1}
-  m_Center: {x: 0, y: -0.95, z: 0}
+  m_Center: {x: 0, y: -0.9, z: 0}
 --- !u!114 &5746902474820461038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +340,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 9f10f995-a20b-40d5-89f3-df23599a8099
-      m_Path: <Keyboard>/e
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -338,6 +361,8 @@ MonoBehaviour:
   PlayerModel2: {fileID: 0}
   Player2Respawn: {fileID: 0}
   respawnsLeft: 2
+  markerPreFab: {fileID: 9136012625027422015, guid: e86de6b8e67d5c845ad853b7a2c55345, type: 3}
+  markerPosition: {fileID: 1327348176089832606}
 --- !u!1 &4413759455941064420
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +396,7 @@ Transform:
   m_Children:
   - {fileID: 5449111126490665519}
   - {fileID: 9089204181156369135}
+  - {fileID: 5812843954690506490}
   m_Father: {fileID: 1925147242646028510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3571590341785047806

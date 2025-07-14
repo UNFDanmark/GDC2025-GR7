@@ -35,6 +35,10 @@ public class AttackAndHealthScript2 : MonoBehaviour
     public GameObject Player1Respawn;
 
     public int respawnsLeft = 2;
+    
+    public GameObject markerPreFab;
+
+    public GameObject markerPosition2;
 
     // Update is called once per frame
     void Start()
@@ -57,6 +61,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
             {
                 rb2.AddForce(Vector3.left * hitForce, ForceMode.Impulse);
             }
+            
+            Instantiate(markerPreFab, markerPosition2.transform.position, Quaternion.identity);
             
             //if player1 is facing right, rb.AddForce(Vector3.right * hitForce)
             
