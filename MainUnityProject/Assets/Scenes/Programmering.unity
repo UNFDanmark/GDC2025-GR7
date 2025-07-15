@@ -2534,6 +2534,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1637768922}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: Cooldown
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: CameraNoise
       value: 
       objectReference: {fileID: 441074026}
@@ -2551,7 +2555,7 @@ PrefabInstance:
       objectReference: {fileID: 373296444}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: respawnHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: shakeDuration
@@ -2567,7 +2571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: playerTwoHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: CameraShakeScript
