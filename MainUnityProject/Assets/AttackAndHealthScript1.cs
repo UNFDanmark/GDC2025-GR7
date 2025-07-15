@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class AttackAndHealthScript1 : MonoBehaviour
 {
@@ -62,12 +63,14 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public Volume BlueVignette;
 
     public bool BlueWin;
-    
+
+    public InputAction restartAction;
     
     // Update is called once per frame
     void Start()
     {
         attackAction.Enable();
+        restartAction.Enable();
     }
     void Update()
     {
@@ -129,6 +132,11 @@ public class AttackAndHealthScript1 : MonoBehaviour
                 print("timer");
                 Player1VictoryScreen.SetActive(true);
             }
+        }
+        
+        if (restartAction.WasPressedThisFrame())
+        {
+            SceneManager.LoadScene("Programmering");
         }
         
     }
