@@ -2739,7 +2739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: attackAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/rightShift
+      value: <Keyboard>/enter
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: restartAction.m_SingletonActionBindings.Array.data[0].m_Path
