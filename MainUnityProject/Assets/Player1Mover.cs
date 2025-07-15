@@ -32,6 +32,7 @@ public class Player1Mover : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            
         }
         
     }
@@ -41,7 +42,7 @@ public class Player1Mover : MonoBehaviour
     void Update()
     {
         
-        
+        Animator.SetBool("Grounded", grounded);
         
         
         print(grounded);
@@ -83,7 +84,8 @@ public class Player1Mover : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
-            
+            Animator.SetTrigger("Jump");
+
         }
         else if (grounded == false && jumpInput < 0)
         {
