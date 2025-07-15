@@ -2666,6 +2666,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 969885884}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: Cooldown
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: CameraNoise
       value: 
       objectReference: {fileID: 441074026}
@@ -2691,7 +2695,7 @@ PrefabInstance:
       objectReference: {fileID: 1396807539}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: respawnHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: shakeDuration
@@ -2711,7 +2715,7 @@ PrefabInstance:
       objectReference: {fileID: 1748415516}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: playerOneHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: CameraShakeScript
@@ -2735,7 +2739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: attackAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/rightCtrl
+      value: <Keyboard>/rightShift
       objectReference: {fileID: 0}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: restartAction.m_SingletonActionBindings.Array.data[0].m_Path
