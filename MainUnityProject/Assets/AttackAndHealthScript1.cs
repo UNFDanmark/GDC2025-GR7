@@ -65,6 +65,8 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public bool BlueWin;
 
     public InputAction restartAction;
+
+    public Animator Animator;
     
     // Update is called once per frame
     void Start()
@@ -86,6 +88,8 @@ public class AttackAndHealthScript1 : MonoBehaviour
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
             CameraShakeScript.DoShake(shakeDuration);
+            
+            Animator.SetTrigger("Attack");
             
             playerTwoHealth -= 1;
             

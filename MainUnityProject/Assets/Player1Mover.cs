@@ -16,6 +16,8 @@ public class Player1Mover : MonoBehaviour
     public float fastFall = 5f;
     public float fallSpeed = 10f;
     public float maxSpeed = 1;
+    
+    public Animator Animator;
     void Start()
     {
         moveAction.Enable();
@@ -38,9 +40,15 @@ public class Player1Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
+        
+        
         print(grounded);
         
         Vector3 newVelocity = rb.linearVelocity;
+        
+        Animator.SetFloat("Speed", newVelocity.magnitude*100);
         /*
         float moveInput = moveAction.ReadValue<float>();
 
