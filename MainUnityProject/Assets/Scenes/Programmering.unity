@@ -2535,7 +2535,7 @@ PrefabInstance:
       objectReference: {fileID: 1637768922}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: Cooldown
-      value: 0.4
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: CameraNoise
