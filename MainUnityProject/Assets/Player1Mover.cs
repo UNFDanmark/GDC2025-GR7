@@ -40,6 +40,7 @@ public class Player1Mover : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -115,7 +116,6 @@ public class Player1Mover : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0,0,0);
         }
-        
         
 
     }

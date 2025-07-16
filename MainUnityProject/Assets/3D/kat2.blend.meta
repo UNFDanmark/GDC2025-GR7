@@ -34,8 +34,8 @@ ModelImporter:
       name: Walk
       takeName: Scene
       internalID: -623603649343465320
-      firstFrame: 1
-      lastFrame: 24
+      firstFrame: 6
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

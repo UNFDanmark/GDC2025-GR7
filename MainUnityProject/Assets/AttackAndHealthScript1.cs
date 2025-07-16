@@ -85,6 +85,9 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public GameObject oneOfFive;
 
     public GameObject zeroOfFive;
+
+    public AudioSource AudioSource;
+
     
     
     
@@ -154,11 +157,14 @@ public class AttackAndHealthScript1 : MonoBehaviour
             oneOfFive.SetActive(false);
             zeroOfFive.SetActive(true);
             
+            
+            
             if(!hasAlreadySetFadeTime)
             {
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
                 hasAlreadySetFadeTime = true;
                 BlueWin = true;
+                AudioSource.Play();
             }
             if (fadeToWinScreenTimeLeft <= 0)
             {
