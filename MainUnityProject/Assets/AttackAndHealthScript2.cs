@@ -89,6 +89,18 @@ public class AttackAndHealthScript2 : MonoBehaviour
 
     public AudioSource AudioSource;
 
+    public float hitTimer = 0.1f;
+
+    float hitTimerLeft;
+
+    public SkinnedMeshRenderer MeshRenderer;
+
+    public Material HitMark;
+
+    bool hitTimerHasSet = false;
+
+    public Material bird;
+
     // Update is called once per frame
     void Start()
     {
@@ -105,6 +117,15 @@ public class AttackAndHealthScript2 : MonoBehaviour
         cooldownLeft -= Time.deltaTime;
         
         fadeToWinScreenTimeLeft -= Time.deltaTime;
+
+        hitTimerLeft -= Time.deltaTime;
+        
+        Material[] mats = MeshRenderer.materials;
+        if (hitTimerLeft <= 0)
+        {
+            mats[1] = bird;
+        }
+        
         
         if (AttackScript2.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
@@ -113,6 +134,11 @@ public class AttackAndHealthScript2 : MonoBehaviour
             Animator.SetTrigger("Attack");
             
             playerOneHealth -= 1;
+            
+            
+            hitTimerLeft = hitTimer;
+            mats[1] = HitMark;
+            
             
             if (transform.eulerAngles.y > 90)
             {
@@ -148,12 +174,13 @@ public class AttackAndHealthScript2 : MonoBehaviour
         }
         else if (playerOneHealth == 0 && respawnsLeft <= 0)
         {
-            PlayerModel.SetActive(false);
             BlueHeart3.SetActive(false);
             
             oneOfFive.SetActive(false);
             zeroOfFive.SetActive(true);
             print("before timer");
+            
+            Player1.SetActive(false);
             
             if(!hasAlreadySetFadeTime)
             {
@@ -215,5 +242,9 @@ public class AttackAndHealthScript2 : MonoBehaviour
             twoOfFive.SetActive(false);
             oneOfFive.SetActive(true);
         }
+        
+        MeshRenderer.materials = mats;
+        
+        
     }
 }

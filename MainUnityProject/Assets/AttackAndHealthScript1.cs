@@ -87,6 +87,20 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public GameObject zeroOfFive;
 
     public AudioSource AudioSource;
+    
+    public float hitTimer = 0.1f;
+
+    float hitTimerLeft;
+
+    public SkinnedMeshRenderer MeshRenderer;
+
+    public Material HitMark;
+
+    bool hitTimerHasSet = false;
+
+    public Material cat;
+
+    public AttackAndHealthScript2 AttackAndHealthScript2;
 
     
     
@@ -108,6 +122,14 @@ public class AttackAndHealthScript1 : MonoBehaviour
         
         fadeToWinScreenTimeLeft -= Time.deltaTime;
         
+        hitTimerLeft -= Time.deltaTime;
+        
+        Material[] mats = MeshRenderer.materials;
+        if (hitTimerLeft <= 0)
+        {
+            mats[0] = cat;
+        }
+        
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
             CameraShakeScript.DoShake(shakeDuration);
@@ -115,6 +137,11 @@ public class AttackAndHealthScript1 : MonoBehaviour
             Animator.SetTrigger("Attack");
             
             playerTwoHealth -= 1;
+            
+            
+            hitTimerLeft = hitTimer;
+            mats[0] = HitMark;
+            
             
             if (transform.eulerAngles.y == 0)
             {
@@ -156,9 +183,9 @@ public class AttackAndHealthScript1 : MonoBehaviour
             
             oneOfFive.SetActive(false);
             zeroOfFive.SetActive(true);
-            
-            
-            
+
+            Player2.SetActive(false);
+
             if(!hasAlreadySetFadeTime)
             {
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
@@ -214,6 +241,7 @@ public class AttackAndHealthScript1 : MonoBehaviour
             twoOfFive.SetActive(false);
             oneOfFive.SetActive(true);
         }
-
+        MeshRenderer.materials = mats;
+        
     }
 }
