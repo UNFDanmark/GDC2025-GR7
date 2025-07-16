@@ -87,6 +87,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
 
     public GameObject zeroOfFive;
 
+    public AudioSource AudioSource;
+
     // Update is called once per frame
     void Start()
     {
@@ -158,6 +160,7 @@ public class AttackAndHealthScript2 : MonoBehaviour
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
                 hasAlreadySetFadeTime = true;
                 RedWin = true;
+                AudioSource.Play();
             }
             if (fadeToWinScreenTimeLeft <= 0)
             {

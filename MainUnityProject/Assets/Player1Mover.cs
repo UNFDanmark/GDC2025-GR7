@@ -19,6 +19,8 @@ public class Player1Mover : MonoBehaviour
     public float maxSpeed = 1;
     
     public Animator Animator;
+
+    public AudioSource AudioSource;
     void Start()
     {
         moveAction.Enable();
@@ -86,6 +88,7 @@ public class Player1Mover : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
             Animator.SetTrigger("Jump");
+            AudioSource.Play();
 
         }
         else if (grounded == false && jumpInput < 0)

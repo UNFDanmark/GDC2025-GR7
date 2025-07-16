@@ -8,8 +8,15 @@ public class WalkSoundPlayer : MonoBehaviour
 
     public AudioClip footStep;
 
+    public AudioClip attackSound;
+
     public void PlayFootstepSound()
     {
         walkSound.PlayOneShot(footStep);
+    }
+
+    public void PlayAttackSound()
+    {
+        walkSound.PlayOneShot(attackSound);
     }
 }
