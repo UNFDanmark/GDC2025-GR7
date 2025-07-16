@@ -18,6 +18,8 @@ public class Player2Mover : MonoBehaviour
     public float maxSpeed = 1;
 
     public Animator Animator;
+
+    public AudioSource runSound;
     void Start()
     {
         moveAction.Enable();
@@ -32,6 +34,9 @@ public class Player2Mover : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            
+            
+            //play landing sound effect
         }
         
     }
@@ -112,7 +117,11 @@ public class Player2Mover : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0,0,0);
         }
-        
 
+
+        if (grounded && (moveInput > 0 || moveInput < 0))
+        {
+            
+        }
     }
 }
