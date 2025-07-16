@@ -3,6 +3,8 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevelPhysics;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class AttackAndHealthScript1 : MonoBehaviour
 {
@@ -57,13 +59,28 @@ public class AttackAndHealthScript1 : MonoBehaviour
     float fadeToWinScreenTimeLeft;
 
     bool hasAlreadySetFadeTime = false;
+
+    public Volume BlueVignette;
+
+    public bool BlueWin;
+
+    public InputAction restartAction;
+
+    public Animator Animator;
+    
     // Update is called once per frame
     void Start()
     {
         attackAction.Enable();
+        restartAction.Enable();
     }
     void Update()
     {
+        if (BlueWin == true)
+        {
+            BlueVignette.weight = Mathf.Lerp(BlueVignette.weight, 1, Time.deltaTime);
+        }
+        
         cooldownLeft -= Time.deltaTime;
         
         fadeToWinScreenTimeLeft -= Time.deltaTime;
@@ -71,6 +88,8 @@ public class AttackAndHealthScript1 : MonoBehaviour
         if (AttackScript.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
             CameraShakeScript.DoShake(shakeDuration);
+            
+            Animator.SetTrigger("Attack");
             
             playerTwoHealth -= 1;
             
@@ -110,12 +129,18 @@ public class AttackAndHealthScript1 : MonoBehaviour
             {
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
                 hasAlreadySetFadeTime = true;
+                BlueWin = true;
             }
             if (fadeToWinScreenTimeLeft <= 0)
             {
                 print("timer");
                 Player1VictoryScreen.SetActive(true);
             }
+        }
+        
+        if (restartAction.WasPressedThisFrame())
+        {
+            SceneManager.LoadScene("Programmering");
         }
         
     }

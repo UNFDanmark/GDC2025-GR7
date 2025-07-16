@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player1Mover : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Player1Mover : MonoBehaviour
     public float fastFall = 5f;
     public float fallSpeed = 10f;
     public float maxSpeed = 1;
+    
+    public Animator Animator;
     void Start()
     {
         moveAction.Enable();
@@ -30,6 +33,7 @@ public class Player1Mover : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            
         }
         
     }
@@ -38,9 +42,15 @@ public class Player1Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        Animator.SetBool("Grounded", grounded);
+        
+        
         print(grounded);
         
         Vector3 newVelocity = rb.linearVelocity;
+        
+        Animator.SetFloat("Speed", newVelocity.magnitude*100);
         /*
         float moveInput = moveAction.ReadValue<float>();
 
@@ -75,7 +85,8 @@ public class Player1Mover : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
-            
+            Animator.SetTrigger("Jump");
+
         }
         else if (grounded == false && jumpInput < 0)
         {

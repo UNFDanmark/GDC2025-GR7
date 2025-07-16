@@ -2,6 +2,8 @@ using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class AttackAndHealthScript2 : MonoBehaviour
 {
@@ -58,14 +60,25 @@ public class AttackAndHealthScript2 : MonoBehaviour
     float fadeToWinScreenTimeLeft;
 
     bool hasAlreadySetFadeTime = false;
+    
+    public Volume RedVignette;
+
+    public bool RedWin;
+
+    public InputAction restartAction;
 
     // Update is called once per frame
     void Start()
     {
         attackAction.Enable();
+        restartAction.Enable();
     }
     void Update()
     {
+        if (RedWin == true)
+        {
+            RedVignette.weight = Mathf.Lerp(RedVignette.weight, 1, Time.deltaTime);
+        }
         
         cooldownLeft -= Time.deltaTime;
         
@@ -114,12 +127,18 @@ public class AttackAndHealthScript2 : MonoBehaviour
             {
                 fadeToWinScreenTimeLeft = fadeToWinScreenTime;
                 hasAlreadySetFadeTime = true;
+                RedWin = true;
             }
             if (fadeToWinScreenTimeLeft <= 0)
             {
                 print("timer");
                 Player2VictoryScreen.SetActive(true);
             }
+        }
+
+        if (restartAction.WasPressedThisFrame())
+        {
+            SceneManager.LoadScene("Programmering");
         }
     }
 }
