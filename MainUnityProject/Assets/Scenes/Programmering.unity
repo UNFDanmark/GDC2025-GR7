@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1138075129}
     m_Modifications:
+    - target: {fileID: -9165797768001435688, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 145e9be5ea07a874b864cdb5b89c6659, type: 2}
     - target: {fileID: -8679921383154817045, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -179,14 +183,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 145e9be5ea07a874b864cdb5b89c6659, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 145e9be5ea07a874b864cdb5b89c6659, type: 2}
+    - target: {fileID: -1526964690268444965, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 145e9be5ea07a874b864cdb5b89c6659, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
       propertyPath: m_Name
       value: kat
       objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8600002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.27999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083501151425157549, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.03000015
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 373296446}
   m_SourcePrefab: {fileID: 100100000, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
 --- !u!1 &133172896
 GameObject:
@@ -580,6 +615,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a1aa25cd3c3d6a41bba755f8c44b959, type: 3}
   m_PrefabInstance: {fileID: 102089002}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &373296446
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373296444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea33cf59c77b00e47ac40ab1799d44fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &379154511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1095,7 @@ GameObject:
   - component: {fileID: 455906858}
   - component: {fileID: 455906857}
   m_Layer: 5
-  m_Name: Blue Outline 1
+  m_Name: Blue Outline 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,7 +1257,7 @@ GameObject:
   - component: {fileID: 611937380}
   - component: {fileID: 611937379}
   m_Layer: 5
-  m_Name: Blue Outline 3
+  m_Name: Blue Outline 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2493,9 +2550,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7603786706384944740, guid: f10e9a3880b7b5041a81ca773ee5951b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0aa12e74544325e4a9458f9e39879cdc, type: 2}
+    - target: {fileID: 7603786706384944740, guid: f10e9a3880b7b5041a81ca773ee5951b, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5fbfd93263f5a1b49b02dac69706eaaf, type: 2}
+      objectReference: {fileID: 2100000, guid: 0aa12e74544325e4a9458f9e39879cdc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2712,12 +2773,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1831654086}
-  - {fileID: 1647413178}
-  - {fileID: 455906856}
-  - {fileID: 1952048810}
-  - {fileID: 1091158898}
   - {fileID: 2039488142}
   - {fileID: 611937378}
+  - {fileID: 1952048810}
+  - {fileID: 1091158898}
+  - {fileID: 1647413178}
+  - {fileID: 455906856}
   - {fileID: 861978802}
   - {fileID: 2088274734}
   - {fileID: 1465998002}
@@ -2918,6 +2979,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3830664777550487916, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 145e9be5ea07a874b864cdb5b89c6659, type: 2}
     - target: {fileID: 4715379488214766106, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3067,7 +3132,7 @@ GameObject:
   - component: {fileID: 1647413180}
   - component: {fileID: 1647413179}
   m_Layer: 5
-  m_Name: Blue Heart #1
+  m_Name: Blue Heart #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3547,7 +3612,7 @@ GameObject:
   - component: {fileID: 2039488144}
   - component: {fileID: 2039488143}
   m_Layer: 5
-  m_Name: Blue Heart #3
+  m_Name: Blue Heart #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3703,7 +3768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1925147242646028510, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 1925147242646028510, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3797,6 +3862,18 @@ PrefabInstance:
       propertyPath: Cooldown
       value: 0.375
       objectReference: {fileID: 0}
+    - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: RedHeart1
+      value: 
+      objectReference: {fileID: 2088274733}
+    - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: RedHeart2
+      value: 
+      objectReference: {fileID: 1084941464}
+    - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: RedHeart3
+      value: 
+      objectReference: {fileID: 1514021273}
     - target: {fileID: 5746902474820461038, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: CameraNoise
       value: 
@@ -3926,9 +4003,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 969885884}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 373296446}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: Cooldown
       value: 0.375
       objectReference: {fileID: 0}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: BlueHeart1
+      value: 
+      objectReference: {fileID: 2039488141}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: BlueHeart2
+      value: 
+      objectReference: {fileID: 1952048809}
+    - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: BlueHeart3
+      value: 
+      objectReference: {fileID: 1647413177}
     - target: {fileID: 2200146423736582814, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: CameraNoise
       value: 
@@ -4009,9 +4102,13 @@ PrefabInstance:
       propertyPath: restartAction.m_SingletonActionBindings.Array.data[0].m_Action
       value: Restart
       objectReference: {fileID: 0}
+    - target: {fileID: 4650622347105472290, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 373296446}
     - target: {fileID: 4715379488214766106, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 4715379488214766106, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: m_LocalPosition.y

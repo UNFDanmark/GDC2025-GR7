@@ -50,7 +50,7 @@ public class Player1Mover : MonoBehaviour
         
         Vector3 newVelocity = rb.linearVelocity;
         
-        Animator.SetFloat("Speed", newVelocity.magnitude*100);
+        Animator.SetFloat("Speed", newVelocity.magnitude);
         /*
         float moveInput = moveAction.ReadValue<float>();
 

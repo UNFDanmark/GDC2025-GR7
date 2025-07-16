@@ -73,6 +73,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
 
     public GameObject BlueHeart3;
 
+    public Animator Animator;
+
     // Update is called once per frame
     void Start()
     {
@@ -93,6 +95,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
         if (AttackScript2.canAttack && attackAction.WasPressedThisFrame() && cooldownLeft <= 0)
         {
             CameraShakeScript.DoShake(shakeDuration);
+            
+            Animator.SetTrigger("Attack");
             
             playerOneHealth -= 1;
             
