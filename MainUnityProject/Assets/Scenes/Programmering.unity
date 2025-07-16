@@ -4723,9 +4723,25 @@ PrefabInstance:
       value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 6955501428278415669, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955501428278415669, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: gravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955501428278415669, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: Animator
       value: 
       objectReference: {fileID: 1637768922}
+    - target: {fileID: 6955501428278415669, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: fallSpeed
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955501428278415669, guid: 3b930246f250a6f4980a842df840d663, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8862942655945789881, guid: 3b930246f250a6f4980a842df840d663, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4911,9 +4927,17 @@ PrefabInstance:
       value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 4650622347105472290, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650622347105472290, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: Animator
       value: 
       objectReference: {fileID: 373296446}
+    - target: {fileID: 4650622347105472290, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4715379488214766106, guid: 2cd1da1206931ed4a92466e4c0da905f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.47
