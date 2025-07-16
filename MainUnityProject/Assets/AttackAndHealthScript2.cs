@@ -74,6 +74,18 @@ public class AttackAndHealthScript2 : MonoBehaviour
     public GameObject BlueHeart3;
 
     public Animator Animator;
+    
+    public GameObject fiveOfFive;
+    
+    public GameObject fourOfFive;
+
+    public GameObject threeOfFive;
+
+    public GameObject twoOfFive;
+
+    public GameObject oneOfFive;
+
+    public GameObject zeroOfFive;
 
     // Update is called once per frame
     void Start()
@@ -123,6 +135,10 @@ public class AttackAndHealthScript2 : MonoBehaviour
             respawnsLeft -= 1;
             print("Hello");
             PlayerModel.SetActive(false);
+            
+            oneOfFive.SetActive(false);
+            zeroOfFive.SetActive(true);
+            
             playerOneHealth = respawnHealth;
             Player1.transform.position = Player1Respawn.transform.position;
             rb2.MovePosition(Player1Respawn.transform.position);
@@ -132,6 +148,9 @@ public class AttackAndHealthScript2 : MonoBehaviour
         {
             PlayerModel.SetActive(false);
             BlueHeart3.SetActive(false);
+            
+            oneOfFive.SetActive(false);
+            zeroOfFive.SetActive(true);
             print("before timer");
             
             if(!hasAlreadySetFadeTime)
@@ -164,6 +183,34 @@ public class AttackAndHealthScript2 : MonoBehaviour
         else if (respawnsLeft == 0)
         {
             BlueHeart2.SetActive(false);
+        }
+
+        if (playerOneHealth == 5)
+        {
+            fiveOfFive.SetActive(true);
+            zeroOfFive.SetActive(false);
+        }
+        
+        if (playerOneHealth == 4)
+        {
+            fiveOfFive.SetActive(false);
+            fourOfFive.SetActive(true);
+        }
+        else if(playerOneHealth == 3)
+
+        {
+            fourOfFive.SetActive(false);
+            threeOfFive.SetActive(true);
+        }
+        else if (playerOneHealth == 2)
+        {
+            threeOfFive.SetActive(false);
+            twoOfFive.SetActive(true);
+        }
+        else if (playerOneHealth == 1)
+        {
+            twoOfFive.SetActive(false);
+            oneOfFive.SetActive(true);
         }
     }
 }

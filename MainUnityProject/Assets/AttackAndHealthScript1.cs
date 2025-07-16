@@ -73,6 +73,18 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public GameObject RedHeart2;
 
     public GameObject RedHeart3;
+
+    public GameObject fiveOfFive;
+    
+    public GameObject fourOfFive;
+
+    public GameObject threeOfFive;
+
+    public GameObject twoOfFive;
+
+    public GameObject oneOfFive;
+
+    public GameObject zeroOfFive;
     
     
     
@@ -124,15 +136,23 @@ public class AttackAndHealthScript1 : MonoBehaviour
             respawnsLeft -= 1;
             print("Hello");
             PlayerModel2.SetActive(false);
+            
+            oneOfFive.SetActive(false);
+            zeroOfFive.SetActive(true);
+            
             playerTwoHealth = respawnHealth;
             Player2.transform.position = Player2Respawn.transform.position;
             rb2.MovePosition(Player2Respawn.transform.position);
             PlayerModel2.SetActive(true);
+            
         }
         else if (playerTwoHealth == 0 && respawnsLeft <= 0)
         {
             PlayerModel2.SetActive(false);
             RedHeart3.SetActive(false);
+            
+            oneOfFive.SetActive(false);
+            zeroOfFive.SetActive(true);
             
             if(!hasAlreadySetFadeTime)
             {
@@ -160,7 +180,34 @@ public class AttackAndHealthScript1 : MonoBehaviour
         {
             RedHeart2.SetActive(false);
         }
+
+        if (playerTwoHealth == 5)
+        {
+            fiveOfFive.SetActive(true);
+            zeroOfFive.SetActive(false);
+        }
         
+        if (playerTwoHealth == 4)
+        {
+            fiveOfFive.SetActive(false);
+            fourOfFive.SetActive(true);
+        }
+        else if(playerTwoHealth == 3)
+
+        {
+            fourOfFive.SetActive(false);
+            threeOfFive.SetActive(true);
+        }
+        else if (playerTwoHealth == 2)
+        {
+            threeOfFive.SetActive(false);
+            twoOfFive.SetActive(true);
+        }
+        else if (playerTwoHealth == 1)
+        {
+            twoOfFive.SetActive(false);
+            oneOfFive.SetActive(true);
+        }
 
     }
 }
