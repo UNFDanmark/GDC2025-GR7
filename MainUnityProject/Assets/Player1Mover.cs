@@ -29,24 +29,16 @@ public class Player1Mover : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        print("called");
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            grounded = true;
-            
-        }
-        
-    }
-
-
+    public LayerMask mask;
+    public Transform feetPosition;
+    
     // Update is called once per frame
     void Update()
     {
         
         Animator.SetBool("Grounded", grounded);
-        
+        var groundHit = Physics.OverlapSphere(feetPosition.position, 0.2f, mask);
+        grounded = groundHit.Length > 0;
         
         print(grounded);
         
