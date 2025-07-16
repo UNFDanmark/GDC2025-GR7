@@ -19,8 +19,6 @@ public class Player1Mover : MonoBehaviour
     public float maxSpeed = 1;
     
     public Animator Animator;
-
-    public AudioSource AudioSource;
     void Start()
     {
         moveAction.Enable();
@@ -39,6 +37,7 @@ public class Player1Mover : MonoBehaviour
         }
         
     }
+
 
     // Update is called once per frame
     void Update()
@@ -87,7 +86,6 @@ public class Player1Mover : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce);
             grounded = false;
             Animator.SetTrigger("Jump");
-            AudioSource.Play();
 
         }
         else if (grounded == false && jumpInput < 0)
@@ -115,7 +113,6 @@ public class Player1Mover : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0,0,0);
         }
-        
         
 
     }
