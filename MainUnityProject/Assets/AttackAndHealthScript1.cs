@@ -67,6 +67,14 @@ public class AttackAndHealthScript1 : MonoBehaviour
     public InputAction restartAction;
 
     public Animator Animator;
+
+    public GameObject RedHeart1;
+
+    public GameObject RedHeart2;
+
+    public GameObject RedHeart3;
+    
+    
     
     // Update is called once per frame
     void Start()
@@ -124,6 +132,7 @@ public class AttackAndHealthScript1 : MonoBehaviour
         else if (playerTwoHealth == 0 && respawnsLeft <= 0)
         {
             PlayerModel2.SetActive(false);
+            RedHeart3.SetActive(false);
             
             if(!hasAlreadySetFadeTime)
             {
@@ -142,6 +151,16 @@ public class AttackAndHealthScript1 : MonoBehaviour
         {
             SceneManager.LoadScene("Programmering");
         }
+
+        if (respawnsLeft == 1)
+        {
+            RedHeart1.SetActive(false);
+        }
+        else if (respawnsLeft == 0)
+        {
+            RedHeart2.SetActive(false);
+        }
         
+
     }
 }
