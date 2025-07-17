@@ -37,7 +37,7 @@ public class Player1Mover : MonoBehaviour
     {
         
         Animator.SetBool("Grounded", grounded);
-        var groundHit = Physics.OverlapSphere(feetPosition.position, 0.2f, mask);
+        var groundHit = Physics.OverlapSphere(feetPosition.position, 0.1f, mask);
         grounded = groundHit.Length > 0;
         
         print(grounded);
