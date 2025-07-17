@@ -164,6 +164,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
             print("Hello");
             PlayerModel.SetActive(false);
             
+         
+            
             oneOfFive.SetActive(false);
             zeroOfFive.SetActive(true);
             
@@ -175,7 +177,8 @@ public class AttackAndHealthScript2 : MonoBehaviour
         else if (playerOneHealth == 0 && respawnsLeft <= 0)
         {
             BlueHeart3.SetActive(false);
-            
+            Player1.GetComponent<AttackAndHealthScript1>().attackAction.Disable();
+            attackAction.Disable();
             oneOfFive.SetActive(false);
             zeroOfFive.SetActive(true);
             print("before timer");

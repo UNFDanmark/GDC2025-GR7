@@ -185,6 +185,8 @@ public class AttackAndHealthScript1 : MonoBehaviour
             zeroOfFive.SetActive(true);
 
             Player2.SetActive(false);
+            Player2.GetComponent<AttackAndHealthScript2>().attackAction.Disable();
+            attackAction.Disable();
 
             if(!hasAlreadySetFadeTime)
             {
